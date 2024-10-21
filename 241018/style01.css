@@ -39,6 +39,39 @@ section {
     width: 360px;
     .h1 {
       text-align: center;
+      margin-bottom: 10px;
+    }
+    span {
+      display: block;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      margin-bottom: 10px;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 12px;
+        width: 40%;
+        height: 1px;
+        background-color: #ddd;
+      }
+      &::before {
+        left: 0;
+      }
+      &::after {
+        right: 0;
+      }
+    }
+    .login-footer p {
+      text-align: center;
+      margin-top: 10px;
+      & > a {
+        font-weight: bold;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
     .btn {
       display: block;
@@ -46,6 +79,36 @@ section {
       padding: 15px;
       margin-bottom: 10px;
       border-radius: 3px;
+      color: #fff;
+      opacity: 0.8;
+      &:hover {
+        opacity: 100;
+      }
+      &:nth-of-type(1) {
+        color: #222;
+        background-color: #fff url("./img/logo-mobile.png") left center
+          no-repeat;
+      }
+      &:nth-of-type(2) {
+        background-color: #fff url("./img/logo-mobile.png") left center
+          no-repeat;
+      }
+      &:nth-of-type(3) {
+        background-color: #898c9b url("./img/logo-email.png") left center
+          no-repeat;
+      }
+      &:nth-of-type(4) {
+        background-color: #11ce00 url("./img/logo-naver.png") left center
+          no-repeat;
+      }
+      &:nth-of-type(5) {
+        background-color: #0076fe url("./img/logo-facebook.png") left center
+          no-repeat;
+      }
+      &:nth-of-type(6) {
+        background-color: #00c026 url("./img/logo-line.png") left center
+          no-repeat;
+      }
     }
   }
 }
