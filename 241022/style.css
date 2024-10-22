@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+h1 {
+  color: green;
+}
+
+/* ul li {
+  color: brown;
+} */
+.boxItem {
+  background-color: aqua;
+}
+/*태그선택자, 전체선택자(*), 아이디선택자(id,#로 선택자 불러옴), 클래스선택자(class, .으로 불러옴), 후손선택자(조부모와 손주의 관계,자손선택자도 포함해서 적용할 수 있음),속성선택자(속성값을 불러옴input[type="text"]), 자손선택자(부모와 자식의 관계), 동위선택자(같은 위치에 있는 선택자 "ul > a + li","ul > a ~ li"), 구조선택자(일반= 자식요소 태그가 모두 동일해야함"body > ul:nth-child(2)", 형태= 자식요소가 다양할 때"body > ul:nth-of-type(2)"),반응선택자,상태선택자,링크선택자,문자선택자,부정선택자 */
+
+/*id는 동일하게 사용 못함(자바스크립트에서 못찾아옴) / class는 중복 가능 */
+input[type="text"] {
+  background-color: blueviolet;
+}
+input[type="password"] {
+  background-color: rgb(136, 255, 0);
+}
+ul > a ~ li {
+  color: crimson;
+}
+body > ul:nth-of-type(2) {
+  display: flex;
+  & > li {
+    padding: 15px;
+  }
+  & > li:nth-child(2n) {
+    background-color: blue;
+  }
+  & > li:nth-child(2n + 1) {
+    background-color: #800080;
+  }
+}
+/*짝수=2n 혹은 even, 홀수 = 2n+1혹은 odd*/
+/*nesting 기능 = & > li{} */
