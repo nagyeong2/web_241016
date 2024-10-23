@@ -1,0 +1,107 @@
+h1 {
+  background-color: crimson;
+  &:hover {
+    color: white;
+  }
+  &:active {
+    color: dodgerblue;
+  }
+}
+
+/*반응선택자 (사용자의반응에 의해서 반응 hover/active)
+상태선택자(폼태그 안에 있는 자식 태그의 스타일 정의 input)*/
+/*focus=마우스가 눌려진 상태*/
+
+/* input:disabled {
+  background-color: brown;
+}
+
+input:enabled {
+  background-color: yellowgreen;
+}
+
+input:focus {
+  background-color: blueviolet;
+} */
+
+form > input:first-child {
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  &:focus {
+    outline: none;
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+}
+
+/*링크선택자 (앵커태그를 위한 선택자 )*/
+a {
+  text-decoration: none;
+  &:visited {
+    color: yellowgreen;
+  }
+  &:link::after {
+    content: " - " attr(href);
+  }
+}
+/*"httr" =안에 들어가는 인자값에 매칭되어있는 값을 찾아옴 (url찾아옴)*/
+
+/*부정선택자(선택한 요소에 반대되는 요소를 찾아옴 ":not")*/
+input:not([type="password"]) {
+  background-color: crimson;
+}
+/*
+문자선택자
+시작문자선택자
+전후문자선택자**
+반응문자선택자
+data-속성**
+*/
+/*문자선택자*/
+.contant {
+  & > p {
+    counter-increment: rint;
+  }
+  & > p::before {
+    content: counter(rint) ".";
+  }
+  & > p::after {
+    content: "-" attr(data-page) "page";
+  }
+  & > p::first-letter {
+    font-size: 30px;
+  }
+  & > p::first-line {
+    color: rgb(84, 0, 163);
+  }
+  & > p::selection {
+    background-color: #000;
+    color: aliceblue;
+  }
+}
+/*전후문자선택자
+전후문자 선택자에만 :: 이 두번 들어감
+ & > p {
+  counter-increment: rint;
+}
+& > p::before {
+  content: counter(rint);
+} */
+/*데이터선택자
+& > p::after {
+    content: "-" attr(data-page) "page";
+  }*/
+/*j-qury
+-라이브러리: js:jqury //react.js
+베이스가 되는 기본 언어를 기반으로 추가 문법을 사용해서 기능구현
+
+-프레임워크: 자신들만의 자체적인 문법 체계
+next.js //vue.js//angular.js
+*/
+
+/*
+-cdn: 중계소 혹은 송전탑
+-data
+*/

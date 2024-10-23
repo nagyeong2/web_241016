@@ -30,6 +30,11 @@ body {
     url("./img/bg.jpg") center/cover no-repeat;
   & > form {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
     & > input[type="submit"] {
       position: absolute;
       top: 20px;
@@ -45,6 +50,22 @@ body {
       &:hover {
         background-color: var(--light-color);
         color: var(--dark-dolor);
+      }
+    }
+    & > section {
+      & > #logo > a {
+        display: inline-block;
+        width: 100%;
+        height: 100px;
+        background: url(./img/bi_1.png) center/cover no-repeat;
+      }
+      & > #logon {
+        width: 450px;
+        height: 630px;
+        border: 1px solid #f00;
+        background: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),
+          url("./img/middle.png") center/cover no-repeat;
+        border-radius: 10px;
       }
     }
   }
