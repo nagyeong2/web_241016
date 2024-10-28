@@ -1,0 +1,57 @@
+/*가시속성*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*display - block,inlin,inline-block,none*/
+/*visibility - hidden, */
+/* h1 {
+  width: 100px;
+  height: 100px;
+  background-color: aliceblue;
+  margin: 50px;
+  /* display: none;} */
+
+/* span {
+  width: 100px;
+  height: 100px;
+  background-color: aliceblue;
+  margin: 50px;
+  padding: 50px;
+} */
+/*inline은 마진값이 적용만 된다*/
+/* visibility: hidden;는 안보이게 하지만 공간감은 유지 */
+/* div {
+  width: 500px;
+  height: 500px;
+  background-color: crimson;
+  opacity: 0.4;
+} */
+/*box속성*/
+div {
+  width: 200px;
+  height: 200px;
+  &:nth-child(1) {
+    background-color: dodgerblue;
+    margin: 10px;
+    padding: 10px;
+    box-sizing: content-box;
+  }
+  &:nth-child(2) {
+    background-color: crimson;
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    /* border-width: 5px;
+    border-style: solid;
+    border-color: burlywood; */
+    border: 4px solid burlywood;
+    border-radius: 0px 0px 20px 0px;
+  }
+}
+/*마진 : 도형 밖 공간 여백을 설정*/
+/*패딩 : 도형 크기를 설정*/
+/*box-sizing: content-box - 콘텐츠를 절대로 침범하지 않게 마진과 패딩 값을 추가*/
+/*box-sizing: border-box : width와 height의 값에 맞춰서 패딩을 해당 값에 녹여서 적용*/
