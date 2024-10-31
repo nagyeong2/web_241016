@@ -30,7 +30,7 @@ body {
 
 #wrapper {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
     url("./img/bg.jpg") center/cover no-repeat;
   & > form {
@@ -41,7 +41,7 @@ body {
     align-items: center;
     gap: 20px;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     & > input[type="submit"] {
       position: absolute;
       top: 20px;
@@ -133,8 +133,17 @@ body {
             background: var(--dark-color);
             color: var(--light-color);
             padding: 0 10px;
+            transition: box-shadow 0.3s;
+            &::placeholder {
+              opacity: 1;
+              transition: opacity 0.3s;
+            }
             &:focus {
               outline: none;
+              box-shadow: 0 0 20px rgba(30, 144, 255, 0.8);
+              &::placeholder {
+                opacity: 0;
+              }
             }
           }
         }
@@ -153,8 +162,16 @@ body {
             background: var(--dark-color);
             color: var(--light-color);
             padding: 0 10px;
+            &::placeholder {
+              opacity: 1;
+              transition: opacity 0.3s;
+            }
             &:focus {
               outline: none;
+              box-shadow: 0 0 20px rgba(30, 144, 255, 0.8);
+              &::placeholder {
+                opacity: 0;
+              }
             }
           }
         }
@@ -206,6 +223,7 @@ body {
           width: 100%;
           label {
             display: block;
+            cursor: pointer;
             font-size: 1.2rem;
             margin-bottom: 6px;
             input[type="checkbox"] {
@@ -226,10 +244,14 @@ body {
             border: 1px solid transparent;
             cursor: pointer;
             transition: background 0.3s color 0.3s;
+            border-radius: 8px;
 
             &:hover {
               background-color: var(--light-color);
               color: var(--dark-color);
+            }
+            &:nth-child(2) {
+              display: none;
             }
           }
         }
@@ -247,20 +269,72 @@ body {
         align-items: center;
         gap: 10px;
         .contant-item {
+          width: 200px;
           background-color: var(--dark-color);
           color: var(--light-color);
           padding: 10px;
           display: flex;
+          justify-content: center;
           gap: 10px;
           border: 1px solid var(--light-color);
           border-radius: 8px;
+          cursor: pointer;
+          &:hover {
+            color: var(--dark-color);
+            background: var(--light-color);
+          }
           .right-contant {
             display: flex;
             flex-direction: column;
+            .contant-title {
+              font-size: 0.8rem;
+            }
+            .contant-body {
+              font-weight: bold;
+            }
           }
           .left-contant {
             i {
               font-size: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 360px) {
+  #wrapper {
+    width: 100%;
+    height: 100%;
+    & > form {
+      width: 100%;
+      height: 100%;
+      & > input[type="submit"] {
+        display: none;
+      }
+      & > section {
+        & > #logon {
+          padding: 0 60px;
+          .btn {
+            input[type="submit"] {
+              &:nth-child(2) {
+                display: block;
+                margin-top: 10px;
+              }
+            }
+          }
+        }
+      }
+      & > footer {
+        & > .contant-group {
+          margin-bottom: 30px;
+          & > .contant-item {
+            width: 160px;
+            .left-contant {
+              i {
+                font-size: 30px;
+              }
             }
           }
         }
