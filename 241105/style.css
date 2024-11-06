@@ -59,7 +59,7 @@ body {
       height: 250px;
       width: 100%;
       position: absolute;
-      bottom: -250px;
+      bottom: -280px;
       text-align: center;
       padding: 20px;
       padding-top: 50px;
@@ -76,6 +76,16 @@ body {
         a {
           color: var(--main-light-color);
         }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background: var(--main-border-color);
+        transform: rotate(-3deg) scale(1.3);
       }
     }
     &:hover .contant {
