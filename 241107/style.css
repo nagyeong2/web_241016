@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+  main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .svg {
+      fill: none;
+      stroke: #fff;
+      stroke-width: 2;
+    }
+    .eye {
+      position: absolute;
+      top: 330px;
+      left: 80px;
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      z-index: 10;
+      border-radius: 50%;
+      animation: ani 1s infinite alternate ease-in-out;
+    }
+    .circle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      border-radius: 50%;
+      top: 282px;
+      left: 0px;
+    }
+  }
+}
+@keyframes ani {
+  0% {
+    height: 20px;
+  }
+  100% {
+    height: 10px;
+    transform: skew(10deg);
+  }
+}
